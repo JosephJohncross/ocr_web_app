@@ -1,114 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- <script src="https://kit.fontawesome.com/fb7f6f30e4.js"></script> -->
-    <link href="https://fonts.googleapis.com/css?family=Nobile:400,500|Open+Sans&display=swap" rel="stylesheet">
-    <link href="static/css/styles.css" rel="stylesheet">
-    <link href="static/css/nav.css" rel="stylesheet">
-    <link href="static/css/layout.css" rel="stylesheet">
-    <link href="static/css/type.css" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Nobile:400,500|Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <!-- change back to style -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link href="../static/css/styles.css" rel="stylesheet" />
+    <link href="../static/css/nav.css" rel="stylesheet" />
+    <link href="../static/css/layout.css" rel="stylesheet" />
+    <link href="../static/css/type.css" rel="stylesheet" />
     <title>MF Extractor</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="row">
-
-            <div class="logo">
-                <h1><i class="fas fa-paint-brush"></i>MF Extractor</h1>
-                <h2>Image Text Extractor</h2>
-            </div>
+      <div class="row">
+        <div class="logo">
+          <h1><i class="fas fa-paint-brush"></i>MF Extractor</h1>
+          <h2>Image Text Extractor</h2>
         </div>
-        <nav id="main-menu" class="main-menu" aria-label="Main menu">
-
-        </nav>
-
+        <ul class="socials">
+          <li>
+            <a href="" class="social"
+              ><i class="fa-brands fa-github"></i> &nbsp;&nbsp;Github</a
+            >
+          </li>
+          <li>
+            <a href="" class="social">
+              <i class="fa-brands fa-linkedin"></i> &nbsp;&nbsp;LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+      <nav id="main-menu" class="main-menu" aria-label="Main menu"></nav>
     </header>
 
     <main>
-        <section id="first">
-
-            <article>
-                <h2>Extract Text with Our Software </h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quia, porro vitae modi architecto
-                    perspiciatis cupiditate possimus tenetur! Ut at saepe iusto dolores odio asperiores molestias
-                    excepturi iure quae enim.</p>
-                <ul>
-                    <li><a href="#">Dummy Link <i class="fas fa-paint-brush"></i></a></li>
-                    <li><a href="#">Dummy Link <i class="fas fa-paint-brush"></i></a> </li>
-                </ul>
-            </article>
-            <!-- <article>
+      <section id="first">
+        <article class="extract__banner">
+          <h2>Project Inspiration</h2>
+          <p>
+            I was working on a project once where I was asked to extract text
+            information from 100 Images, well the most illogical way to do that
+            would have been to type them out one after the other. But thanks to
+            my knowledge of python and data extraction, I was able to codify the
+            project and finish it within 30mins. Then the thought of turning it
+            into a web app for ease of access to anyone. I hope you find this
+            project worth using for your simple text extraction from images.
+          </p>
+        </article>
+        <!-- <article>
                 <img src="img/book.png" alt="">
                 <h2>99.9% extraction success</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, praesentium illo. Obcaecati facilis dignissimos fuga illum tempora error voluptatem eum blanditiis assumenda magni quos recusandae deserunt voluptas, ratione corrupti harum? </p>
                 <p><a href="#" >Dummy Link
                         <i class="fas fa-paint-brush"></i></a> </p>
             </article> -->
-            <article>
-                <div style="display: flex; align-items: center; justify-content: center; margin-top: 1rem;">
-                    <div id="imgDis" style="height:auto; display: none;" class="">
+        <article>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-top: 1rem;
+            "
+          >
+            <div id="imgDis" style="height: auto; display: none" class=""></div>
+            <div
+              id="prev"
+              style="
+                background-color: #f1f1f1;
+                height: 250px;
+                width: 250px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 1rem;
+              "
+            >
+              <h4>Image Preview</h4>
+            </div>
+          </div>
 
-                    </div>
-                    <div id="prev"
-                        style="background-color: #f1f1f1; height: 250px; width: 250px;display: flex; justify-content: center;align-items: center; border-radius: 1rem;">
-                        <h4>Image Preview</h4>
-                    </div>
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+              margin-top: 1rem;
+            "
+          >
+            <!-- <input id="uploadFile"  disabled="disabled" /> -->
+
+            <form action="/" method="POST" , enctype="multipart/form-data">
+              <div
+                class="fileUpload btn btn-primary"
+                style="
+                  display: flex;
+                  justify-content: center;
+                  flex-direction: row;
+                "
+              >
+                <div>
+                  <label for="#uploadBtn" id="up">Upload</label>
+                  <input
+                    id="uploadBtn"
+                    accept="image/*"
+                    type="file"
+                    class="upload"
+                    name="upload"
+                  />
                 </div>
 
-                <div
-                    style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-top: 1rem;">
-                    <!-- <input id="uploadFile"  disabled="disabled" /> -->
-
-                    <form action="/" method="POST" , enctype="multipart/form-data">
-                        <div class="fileUpload btn btn-primary"
-                            style="display: flex; justify-content: center;  flex-direction: row;">
-
-
-                            <div>
-                                <label for="#uploadBtn" id="up">Upload</label>
-                                <input id="uploadBtn" accept="image/*" type="file" class="upload" name="upload" />
-                            </div>
-
-
-
-                            <div>
-                                <!-- <form action="/" method="POST", enctype="multipart/form-data"> -->
-                                <!-- <label for="#uploadBtn" id="up2">Extract</label> -->
-                                <button type="submit" id="up2">Extract</button>
-                                <!-- </form>         -->
-                            </div>
-
-
-                        </div>
-                    </form>
+                <div>
+                  <!-- <form action="/" method="POST", enctype="multipart/form-data"> -->
+                  <!-- <label for="#uploadBtn" id="up2">Extract</label> -->
+                  <button type="submit" id="up2">Extract</button>
+                  <!-- </form>         -->
                 </div>
-            </article>
-        </section>
-        <section id="main">
-
-            <article>
+              </div>
+            </form>
+          </div>
+        </article>
+      </section>
+      <section id="main">
+        <!-- <article>
                 <img src="img/bootcamp.png" alt="" class="floatright">
                 <h2>Best Extractor</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore ratione adipisci nihil deleniti,
                     suscipit ullam. Nesciunt debitis facilis fuga dolor rem quis sed, voluptates, nihil nostrum
                     laboriosam eaque officia similique?</p>
                 <p><a href="#">Dummy Link <i class="fas fa-paint-brush"></i></a></p>
-            </article>
+            </article> -->
 
-
-            <article>
-                <div style="height:auto; background-color: #f1f1f1;">
-                    Extracted text here
-                </div>
-                
-            </article>
-        </section>
-        <!-- <section id="devs">
+        <article>
+          <div class="extract__header">Extracted text here</div>
+        </article>
+      </section>
+      <!-- <section id="devs">
                 
                 <ul>
                     <li>
@@ -121,29 +160,27 @@
             
             
         </section> -->
-
     </main>
     <script>
-        document.getElementById("uploadBtn").onchange = function () {
-            document.getElementById("prev").style.display = "none"
-            // document.getElementById("imgDis").style.display = "block"
-            const imgPreview = document.getElementById("imgDis")
-            getImgData(imgPreview)
-        };
+      document.getElementById("uploadBtn").onchange = function () {
+        document.getElementById("prev").style.display = "none";
+        // document.getElementById("imgDis").style.display = "block"
+        const imgPreview = document.getElementById("imgDis");
+        getImgData(imgPreview);
+      };
 
-        function getImgData(imgPreview) {
-            const chooseFile = document.getElementById("uploadBtn");
-            const files = chooseFile.files[0];
-            if (files) {
-                const fileReader = new FileReader();
-                fileReader.readAsDataURL(files);
-                fileReader.addEventListener("load", function () {
-                    imgPreview.style.display = "block";
-                    imgPreview.innerHTML = '<img src="' + this.result + '" />';
-                });
-            }
+      function getImgData(imgPreview) {
+        const chooseFile = document.getElementById("uploadBtn");
+        const files = chooseFile.files[0];
+        if (files) {
+          const fileReader = new FileReader();
+          fileReader.readAsDataURL(files);
+          fileReader.addEventListener("load", function () {
+            imgPreview.style.display = "block";
+            imgPreview.innerHTML = '<img src="' + this.result + '" />';
+          });
         }
+      }
     </script>
-</body>
-
+  </body>
 </html>
