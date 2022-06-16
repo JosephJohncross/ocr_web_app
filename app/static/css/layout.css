@@ -1,0 +1,169 @@
+/* developer list default layout */
+#devs ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    --columns: 2;
+}
+/* grid system -- mobile first! */
+main {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  --columns: 12;
+}
+section,
+#inside article,
+#inside aside,
+#devs li {
+    --width: 12;
+    --gap-constant: 0.3%;
+	--initialbasis: calc(var(--width, 0) / var(--columns, 16) * 100%);
+    --gap: calc((var(--columns, 16) - var(--width, 0)) * var(--gap-constant, 0.3%));
+	flex-basis: calc(var(--initialbasis) - var(--gap));
+}
+#devs li {
+    --width: 1;
+    --gap-constant: 3%;
+}
+
+.fileUpload {
+    position: relative;
+    /* overflow: hidden; */
+    margin: 10px;
+    /* cursor: pointer; */
+}
+.fileUpload input.upload {
+    /* position: absolute;
+    top: 0;
+    right: 0; */
+    margin: -50%;
+    padding: 0;
+    /* font-size: 20px; */
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+#up, #up2{
+    background: #C85028;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5%;
+    cursor: pointer;
+    border: solid;
+}
+#up:hover, #up2:hover{
+    background: white;
+    color: #C85028;
+    border-color: 1px solid #C85028; 
+}
+#devs{
+padding: 5rem;
+}
+
+#img-preview {
+    display: none; 
+    width: 155px;   
+    border: 2px dashed #333;  
+    margin-bottom: 20px;
+  }
+  #imgDis img {  
+    width: 100%;
+    height: auto; 
+    display: block; 
+    border-radius: 0.3rem;  
+  }
+
+
+/* tablet display - change columns to 11, place rows 3 and 4 on the bottom, full width */
+@media (min-width: 740px) {
+    /* keep our math working, move 3rd and 4th columns to bottom */
+    main {
+        --columns: 12;
+    }
+    /* row 1: #first 5 - #main 6,
+    row 2 #devs: 11,
+    row 3 #resources: 11
+    Change ordering to make that work */
+    #first {
+        --width: 6;
+        order: 1;
+    }
+    #main {
+        --width: 6;
+        order: 2;
+    }
+    #devs{
+        --width: 6;
+        order: 3;
+    }
+    #devs ul {
+        --columns: 5;
+    }
+    #resources {
+        --width: 6;
+        order: 4;
+    }
+
+    .floatleft {
+        float: left;
+        margin: 0 1rem 1rem 0;
+    }
+    .floatright {
+        float: right;
+        margin: 0 0 1rem 1rem;
+    }
+    #inside article {
+        --width: 7;
+    }
+    #inside aside {
+        --width: 4;
+    }
+}
+@media (min-width: 950px){
+    /* keep our math working, move 3rd column to bottom */
+    main {
+        --columns: 12;
+    }
+    /* row 1: #first 5 - #main 6 - #resources 3,
+    row 2: #devs 14
+    Change ordering to make that work */
+    #devs{
+        --width: 6;
+        order: 3;
+    }
+    #resources {
+        --width: 6;
+        order: 4;
+    }
+    #inside article {
+        --width: 10;
+    }
+    #inside aside {
+        --width: 4;
+    }
+}
+@media (min-width: 1200px) {
+    #devs ul {
+       --columns: 1;
+    }
+    main {
+        --columns: 12;
+    }
+    /* #first 5 - #main 6 - #devs 2 - #resources 3 cols wide, make sure ordering is correct */
+    #devs{
+        --width: 6;
+        order: 3;
+    }
+    #resources {
+        --width: 6;
+        order: 4;
+    }
+    #inside article {
+        --width: 12;
+    }
+    #inside aside {
+        --width: 4;
+    }
+}
